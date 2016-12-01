@@ -19,6 +19,14 @@
 
     
     <url>
+     <loc>/deploy/</loc>
+     <lastmod>2016-12-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>/routing/</loc>
      <lastmod>2016-12-01</lastmod>
      <changefreq>daily</changefreq>

@@ -46,6 +46,21 @@
             "title": "Container"
         }, 
         {
+            "location": "/deploy/", 
+            "text": "Deploy\n\n\nSviluppare velocemente un'applicazione avrebbe poco senso se poi si perdono giornate intere per il deploy, giusto?\n\n\nCorda usa \nLaravel Envoy\n per automatizzare le operazioni pi\u00f9 comuni, come il deploy.\n\n\nPer installare Laravel Envoy\n\n\ncomposer global require \nlaravel/envoy=~1.0\n\n\n\n\n\nNel file Envoy.blade.php baster\u00e0 inserire le variabili del progetto (nome utente sul server, dominio, repository git) e Envoy si occuper\u00e0 del resto!", 
+            "title": "Deploy"
+        }, 
+        {
+            "location": "/deploy/#deploy", 
+            "text": "Sviluppare velocemente un'applicazione avrebbe poco senso se poi si perdono giornate intere per il deploy, giusto?  Corda usa  Laravel Envoy  per automatizzare le operazioni pi\u00f9 comuni, come il deploy.", 
+            "title": "Deploy"
+        }, 
+        {
+            "location": "/deploy/#per-installare-laravel-envoy", 
+            "text": "composer global require  laravel/envoy=~1.0   Nel file Envoy.blade.php baster\u00e0 inserire le variabili del progetto (nome utente sul server, dominio, repository git) e Envoy si occuper\u00e0 del resto!", 
+            "title": "Per installare Laravel Envoy"
+        }, 
+        {
             "location": "/routing/", 
             "text": "Routing e Richieste\n\n\nRouter\n\n\nLe route della tua applicazione sono definite in app/routes.php.\n\n\nCreare una nuova route \u00e8 molto semplice,  basta chiamare il metodo corrispondente alla richiesta HTTP che si intente fare, passando come parametri\n\n\n\n\nl'URI che si vuole raggiungere\n\n\nun array composto dal controller che dovr\u00e0 gestire la richiesta e il relativo metodo che verr\u00e0 chiamato, oppure una funzione anonima per gestire 'al volo' la richiesta.\n\n\n\n\necco un esempio di richiesta GET\n\n\n$router-\nget('/form', ['App\\Controllers\\FormController', 'form']);\n\n\n\n\necco invece un esempio di richiesta POST\n\n\n$router-\npost('/form', ['App\\Controllers\\FormController', 'save']);\n\n\n\n\nController\n\n\nUn controller \u00e8 una classe che permette attraverso i suoi metodi di gestire ed elaborare le richieste che arrivano dalle route definite nell'applicazione.\n\n\nEcco il codice di un semplice controller\n\n\n?php\nNamespace App\\Controllers;\n\nuse Nodopiano\\Corda\\Controller;\n\nclass FormController extends Controller\n{\n\n    public function form()\n    {\n      // do something here\n    }\n}\n\n\n\n\n\nTutto qui? \n\n\nSi, un controller in Corda \u00e8 davvero molto semplice!", 
             "title": "Routing"

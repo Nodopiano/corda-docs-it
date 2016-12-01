@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Templates - Corda</title>
+        <title>Deploy - Corda</title>
       
       
       
@@ -87,7 +87,7 @@
             
           </span>
         
-        Templates
+        Deploy
       </div>
     </div>
     
@@ -156,9 +156,24 @@
           
             
   <li>
-    <a class="" title="Deploy" href="../deploy/">
+    <a class="current" title="Deploy" href="./">
       Deploy
     </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Per installare Laravel Envoy" href="#per-installare-laravel-envoy">
+                Per installare Laravel Envoy
+              </a>
+            </li>
+          
+        </ul>
+      
     
   </li>
 
@@ -174,30 +189,9 @@
           
             
   <li>
-    <a class="current" title="Templates" href="./">
+    <a class="" title="Templates" href="../templates/">
       Templates
     </a>
-    
-      
-        
-      
-      
-        <ul>
-          
-            <li class="anchor">
-              <a title="View" href="#view">
-                View
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="Response" href="#response">
-                Response
-              </a>
-            </li>
-          
-        </ul>
-      
     
   </li>
 
@@ -230,27 +224,14 @@
       <article class="article">
         <div class="wrapper">
           
-          <h1 id="templates-e-view">Templates e View</h1>
-<p>Corda usa Twig, un sistema di template html per PHP. 
-Si rimanda alla <a href="http://twig.sensiolabs.org/doc/templates.html">documentazione di Twig</a> per i dettagli.</p>
-<p>Corda è già preimpostato con una master view (views/app.html) che può essere modificata a seconda delle proprie esigenze. Al suo interno vengono inseriti gli altri template chiamati dalle view.</p>
-<h2 id="view">View</h2>
-<p>Come fare per rispondere con una view da un controller? 
-Corda offre un comodo metodo globale view() che riceve due parametri:</p>
-<ul>
-<li>il nome del file html </li>
-<li>un array con le variabili da passare alla vista.</li>
-</ul>
-<pre><code>  return view('index.html',array('message' =&gt; 'Hello!'));
+          <h1 id="deploy">Deploy</h1>
+<p>Sviluppare velocemente un'applicazione avrebbe poco senso se poi si perdono giornate intere per il deploy, giusto?</p>
+<p>Corda usa <a href="https://laravel.com/docs/5.3/envoy">Laravel Envoy</a> per automatizzare le operazioni più comuni, come il deploy.</p>
+<h4 id="per-installare-laravel-envoy">Per installare Laravel Envoy</h4>
+<pre><code>composer global require &quot;laravel/envoy=~1.0&quot;
 </code></pre>
 
-<p>Ecco fatto! sarà costruita una view usando il template <em>index.html</em> e passando la variabile <em>message</em>.</p>
-<h2 id="response">Response</h2>
-<p>Ma come fare quando quello che voglio ritornare non è un vista ma un semplice json? 
-Corda ha un altro metodo globale, che si chiama, guardacaso, json().</p>
-<p>Riceve un array di variabili che andranno convertite e ritornate in formato json.</p>
-<pre><code>  return json($this-&gt;api-&gt;pages(61));
-</code></pre>
+<p>Nel file Envoy.blade.php basterà inserire le variabili del progetto (nome utente sul server, dominio, repository git) e Envoy si occuperà del resto!</p>
           <aside class="copyright" role="note">
             
             Documentation built with
@@ -267,7 +248,7 @@ Corda ha un altro metodo globale, che si chiama, guardacaso, json().</p>
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../routing/" title="Routing">
+        <a href="../configuration/" title="Configuration">
           <span class="direction">
             Previous
           </span>
@@ -277,7 +258,7 @@ Corda ha un altro metodo globale, che si chiama, guardacaso, json().</p>
             </div>
             <div class="stretch">
               <div class="title">
-                Routing
+                Configuration
               </div>
             </div>
           </div>
@@ -286,14 +267,14 @@ Corda ha un altro metodo globale, che si chiama, guardacaso, json().</p>
     </div>
     <div class="next">
       
-        <a href="../utilities/" title="Utilities">
+        <a href="../routing/" title="Routing">
           <span class="direction">
             Next
           </span>
           <div class="page">
             <div class="stretch">
               <div class="title">
-                Utilities
+                Routing
               </div>
             </div>
             <div class="button button-next" role="button" aria-label="Next">
