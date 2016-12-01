@@ -29,7 +29,7 @@ $router->post('/form', ['App\Controllers\FormController', 'save']);
 
 ## Controller
 
-Un controller è una classe che permette attraverso di suoi metodi di gestire ed elaborare le richieste che arrivano dalle route definite nell'applicazione.
+Un controller è una classe che permette attraverso i suoi metodi di gestire ed elaborare le richieste che arrivano dalle route definite nell'applicazione.
 
 Ecco il codice di un semplice controller
 

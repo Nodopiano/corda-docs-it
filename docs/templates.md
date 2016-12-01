@@ -9,6 +9,7 @@ Corda è già preimpostato con una master view (views/app.html) che può essere 
 
 Come fare per rispondere con una view da un controller? 
 Corda offre un comodo metodo globale view() che riceve due parametri:
+
 - il nome del file html 
 - un array con le variabili da passare alla vista.
 
@@ -21,7 +22,7 @@ Ecco fatto! sarà costruita una view usando il template _index.html_ e passando 
 ## Response
 
 Ma come fare quando quello che voglio ritornare non è un vista ma un semplice json? 
-Corda ha un'altro metodo globale, che si chiama, guardacaso, json().
+Corda ha un altro metodo globale, che si chiama, guardacaso, json().
 
 Riceve un array di variabili che andranno convertite e ritornate in formato json.
 ```

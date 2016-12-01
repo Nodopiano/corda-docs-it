@@ -36,7 +36,7 @@ return [
 
 
 
-Aggiungedo un'elemento a questo array, il dependency container cercherà un file di configurazione chiamato come il servizio inserito e lo caricherà con la medesima chiave. 
+Aggiungedo un elemento a questo array, il dependency container cercherà un file di configurazione chiamato come il servizio inserito e lo caricherà con la medesima chiave. 
 
 Ad esempio, il servizio 'api' viene caricato nel container usado come chiave 'api'.
 
