@@ -67,7 +67,7 @@
         }, 
         {
             "location": "/templates/", 
-            "text": "Templates e View\n\n\nCorda usa Twig, un sistema di template html per PHP. \nSi rimanda alla \ndocumentazione di Twig\n per i dettagli.\n\n\nCorda \u00e8 gi\u00e0 preimpostato con una master view (views/app.html) che pu\u00f2 essere modificata a seconda delle proprie esigenze. Al suo interno vengono inseriti gli altri template chiamati dalle view.\n\n\nView\n\n\nCome fare per rispondere con una view da un controller? \nCorda offre un comodo metodo globale view() che riceve due parametri:\n- il nome del file html \n- un array con le variabili da passare alla vista.\n\n\n  return view('index.html',array('message' =\n 'Hello!'));\n\n\n\n\nEcco fatto! sar\u00e0 costruita una view usando il template \nindex.html\n e passando la variabile \nmessage\n.\n\n\nResponse\n\n\nMa come fare quando quello che voglio ritornare non \u00e8 un vista ma un semplice json? \nCorda ha un'altro metodo globale, che si chiama, guardacaso, json().\n\n\nRiceve un array di variabili che andranno convertite e ritornate in formato json.\n\n\n  return json($this-\napi-\npages(61));", 
+            "text": "Templates e View\n\n\nCorda usa Twig, un sistema di template html per PHP. \nSi rimanda alla \ndocumentazione di Twig\n per i dettagli.\n\n\nCorda \u00e8 gi\u00e0 preimpostato con una master view (views/app.html) che pu\u00f2 essere modificata a seconda delle proprie esigenze. Al suo interno vengono inseriti gli altri template chiamati dalle view.\n\n\nView\n\n\nCome fare per rispondere con una view da un controller? \nCorda offre un comodo metodo globale view() che riceve due parametri:\n\n\n\n\nil nome del file html \n\n\nun array con le variabili da passare alla vista.\n\n\n\n\n  return view('index.html',array('message' =\n 'Hello!'));\n\n\n\n\nEcco fatto! sar\u00e0 costruita una view usando il template \nindex.html\n e passando la variabile \nmessage\n.\n\n\nResponse\n\n\nMa come fare quando quello che voglio ritornare non \u00e8 un vista ma un semplice json? \nCorda ha un altro metodo globale, che si chiama, guardacaso, json().\n\n\nRiceve un array di variabili che andranno convertite e ritornate in formato json.\n\n\n  return json($this-\napi-\npages(61));", 
             "title": "Templates"
         }, 
         {
@@ -77,12 +77,12 @@
         }, 
         {
             "location": "/templates/#view", 
-            "text": "Come fare per rispondere con una view da un controller? \nCorda offre un comodo metodo globale view() che riceve due parametri:\n- il nome del file html \n- un array con le variabili da passare alla vista.    return view('index.html',array('message' =  'Hello!'));  Ecco fatto! sar\u00e0 costruita una view usando il template  index.html  e passando la variabile  message .", 
+            "text": "Come fare per rispondere con una view da un controller? \nCorda offre un comodo metodo globale view() che riceve due parametri:   il nome del file html   un array con le variabili da passare alla vista.     return view('index.html',array('message' =  'Hello!'));  Ecco fatto! sar\u00e0 costruita una view usando il template  index.html  e passando la variabile  message .", 
             "title": "View"
         }, 
         {
             "location": "/templates/#response", 
-            "text": "Ma come fare quando quello che voglio ritornare non \u00e8 un vista ma un semplice json? \nCorda ha un'altro metodo globale, che si chiama, guardacaso, json().  Riceve un array di variabili che andranno convertite e ritornate in formato json.    return json($this- api- pages(61));", 
+            "text": "Ma come fare quando quello che voglio ritornare non \u00e8 un vista ma un semplice json? \nCorda ha un altro metodo globale, che si chiama, guardacaso, json().  Riceve un array di variabili che andranno convertite e ritornate in formato json.    return json($this- api- pages(61));", 
             "title": "Response"
         }, 
         {

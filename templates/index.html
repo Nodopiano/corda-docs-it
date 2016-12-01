@@ -227,16 +227,18 @@ Si rimanda alla <a href="http://twig.sensiolabs.org/doc/templates.html">document
 <p>Corda è già preimpostato con una master view (views/app.html) che può essere modificata a seconda delle proprie esigenze. Al suo interno vengono inseriti gli altri template chiamati dalle view.</p>
 <h2 id="view">View</h2>
 <p>Come fare per rispondere con una view da un controller? 
-Corda offre un comodo metodo globale view() che riceve due parametri:
-- il nome del file html 
-- un array con le variabili da passare alla vista.</p>
+Corda offre un comodo metodo globale view() che riceve due parametri:</p>
+<ul>
+<li>il nome del file html </li>
+<li>un array con le variabili da passare alla vista.</li>
+</ul>
 <pre><code>  return view('index.html',array('message' =&gt; 'Hello!'));
 </code></pre>
 
 <p>Ecco fatto! sarà costruita una view usando il template <em>index.html</em> e passando la variabile <em>message</em>.</p>
 <h2 id="response">Response</h2>
 <p>Ma come fare quando quello che voglio ritornare non è un vista ma un semplice json? 
-Corda ha un'altro metodo globale, che si chiama, guardacaso, json().</p>
+Corda ha un altro metodo globale, che si chiama, guardacaso, json().</p>
 <p>Riceve un array di variabili che andranno convertite e ritornate in formato json.</p>
 <pre><code>  return json($this-&gt;api-&gt;pages(61));
 </code></pre>
