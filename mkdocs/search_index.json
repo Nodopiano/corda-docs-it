@@ -1,0 +1,149 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Corda\n\n\nPer cominciare\n\n\nPer cominciare \u00e8 sufficiente clonare il respository del boilerplate e installare le dipendenze, in questo modo:\n\n\ngit clone https://github.com/Nodopiano/wp-api-php-boilerplate.git your-project\ncomposer update\ncp .env-example .env\n\n\n\n\na questo punto, configurate il vostro web server per servire i file dalla directory 'public' del progetto e vedrete la home page di Corda!.\n\n\nSviluppare con Corda\n\n\nQuando sviluppiamo un'applicazione di questo tipo non ha senso attivare apache o nginx per pochi file, ci basta il server integrato di php, per fare prima!\nBastano due comandi per fare quello che ci serve!\n\n\nyarn\nyarn start\n\n\n\n\nNB: yarn \u00e8 un gestore di pacchetti javascript estremamente performante, installalo con \n\n\nnpm install -g yarn\n\n\n\n\nil browser si aprir\u00e0 alla pagina localhost:3000, gi\u00e0 configurato per l'autoreload delle pagine ad ogni modifica!", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#corda", 
+            "text": "", 
+            "title": "Corda"
+        }, 
+        {
+            "location": "/#per-cominciare", 
+            "text": "Per cominciare \u00e8 sufficiente clonare il respository del boilerplate e installare le dipendenze, in questo modo:  git clone https://github.com/Nodopiano/wp-api-php-boilerplate.git your-project\ncomposer update\ncp .env-example .env  a questo punto, configurate il vostro web server per servire i file dalla directory 'public' del progetto e vedrete la home page di Corda!.", 
+            "title": "Per cominciare"
+        }, 
+        {
+            "location": "/#sviluppare-con-corda", 
+            "text": "Quando sviluppiamo un'applicazione di questo tipo non ha senso attivare apache o nginx per pochi file, ci basta il server integrato di php, per fare prima!\nBastano due comandi per fare quello che ci serve!  yarn\nyarn start  NB: yarn \u00e8 un gestore di pacchetti javascript estremamente performante, installalo con   npm install -g yarn  il browser si aprir\u00e0 alla pagina localhost:3000, gi\u00e0 configurato per l'autoreload delle pagine ad ogni modifica!", 
+            "title": "Sviluppare con Corda"
+        }, 
+        {
+            "location": "/configuration/", 
+            "text": "Configurazione\n\n\nCorda pu\u00f2 essere configurato a piacere per utilizzare un database, delle api e per caricare automaticamente delle variabili nel Container dell'applicazione.\n\n\nPu\u00f2 anche utilizzare delle variabili per differenziare l'ambiente di sviluppo da quello di produzione. \n\n\nVariabili di Ambiente\n\n\nLe variabili di ambiente sono inserite nel file .env nella root del progetto. \n\n\nIl file va creato al primo avvio, \u00e8 possibile utilizzare come base il file di esempio '.env-example'.\n\n\nContiene informazioni relative al mail server, l'indirizzo di invio e i parametri di mailchimp.\n\n\nVariabili di Sistema\n\n\nLe variabili di sistema sono contenute in files php nella cartella app/config\n\n\nOgni file ritorna semplicemente un array di array, che ha come chiavi i nomi delle variabili.\nUn file \u00e8 piuttosto importante, \u00e8 config.php, che ritorna i nomi di tutti i servizi che vanno caricati:\n\n\n?php\nreturn [\n    'services' =\n [\n      'api',\n      'your-service'\n      // etc\n    ],\n];\n\n\n\n\nAggiungedo un'elemento a questo array, il dependency container cercher\u00e0 un file di configurazione chiamato come il servizio inserito e lo caricher\u00e0 con la medesima chiave. \n\n\nAd esempio, il servizio 'api' viene caricato nel container usado come chiave 'api'.\n\n\nContainer\n\n\nPer recuperare le chiavi di configurazione inserite nel container basta chiamare il metodo statico get\n\n\nApp::get('api')\n\n\n\n\ne questo ritorner\u00e0 un array con tutte le configurazioni del servizio 'api'.", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/configuration/#configurazione", 
+            "text": "Corda pu\u00f2 essere configurato a piacere per utilizzare un database, delle api e per caricare automaticamente delle variabili nel Container dell'applicazione.  Pu\u00f2 anche utilizzare delle variabili per differenziare l'ambiente di sviluppo da quello di produzione.", 
+            "title": "Configurazione"
+        }, 
+        {
+            "location": "/configuration/#variabili-di-ambiente", 
+            "text": "Le variabili di ambiente sono inserite nel file .env nella root del progetto.   Il file va creato al primo avvio, \u00e8 possibile utilizzare come base il file di esempio '.env-example'.  Contiene informazioni relative al mail server, l'indirizzo di invio e i parametri di mailchimp.", 
+            "title": "Variabili di Ambiente"
+        }, 
+        {
+            "location": "/configuration/#variabili-di-sistema", 
+            "text": "Le variabili di sistema sono contenute in files php nella cartella app/config  Ogni file ritorna semplicemente un array di array, che ha come chiavi i nomi delle variabili.\nUn file \u00e8 piuttosto importante, \u00e8 config.php, che ritorna i nomi di tutti i servizi che vanno caricati:  ?php\nreturn [\n    'services' =  [\n      'api',\n      'your-service'\n      // etc\n    ],\n];  Aggiungedo un'elemento a questo array, il dependency container cercher\u00e0 un file di configurazione chiamato come il servizio inserito e lo caricher\u00e0 con la medesima chiave.   Ad esempio, il servizio 'api' viene caricato nel container usado come chiave 'api'.", 
+            "title": "Variabili di Sistema"
+        }, 
+        {
+            "location": "/configuration/#container", 
+            "text": "Per recuperare le chiavi di configurazione inserite nel container basta chiamare il metodo statico get  App::get('api')  e questo ritorner\u00e0 un array con tutte le configurazioni del servizio 'api'.", 
+            "title": "Container"
+        }, 
+        {
+            "location": "/routing/", 
+            "text": "Routing e Richieste\n\n\nRouter\n\n\nLe route della tua applicazione sono definite in app/routes.php.\n\n\nCreare una nuova route \u00e8 molto semplice,  basta chiamare il metodo corrispondente alla richiesta HTTP che si intente fare, passando come parametri\n\n\n\n\nl'URI che si vuole raggiungere\n\n\nun array composto dal controller che dovr\u00e0 gestire la richiesta e il relativo metodo che verr\u00e0 chiamato, oppure una funzione anonima per gestire 'al volo' la richiesta.\n\n\n\n\necco un esempio di richiesta GET\n\n\n$router-\nget('/form', ['App\\Controllers\\FormController', 'form']);\n\n\n\n\necco invece un esempio di richiesta POST\n\n\n$router-\npost('/form', ['App\\Controllers\\FormController', 'save']);\n\n\n\n\nController\n\n\nUn controller \u00e8 una classe che permette attraverso di suoi metodi di gestire ed elaborare le richieste che arrivano dalle route definite nell'applicazione.\n\n\nEcco il codice di un semplice controller\n\n\n?php\nNamespace App\\Controllers;\n\nuse Nodopiano\\Corda\\Controller;\n\nclass FormController extends Controller\n{\n\n    public function form()\n    {\n      // do something here\n    }\n}\n\n\n\n\n\nTutto qui? \n\n\nSi, un controller in Corda \u00e8 davvero molto semplice!", 
+            "title": "Routing"
+        }, 
+        {
+            "location": "/routing/#routing-e-richieste", 
+            "text": "", 
+            "title": "Routing e Richieste"
+        }, 
+        {
+            "location": "/routing/#router", 
+            "text": "Le route della tua applicazione sono definite in app/routes.php.  Creare una nuova route \u00e8 molto semplice,  basta chiamare il metodo corrispondente alla richiesta HTTP che si intente fare, passando come parametri   l'URI che si vuole raggiungere  un array composto dal controller che dovr\u00e0 gestire la richiesta e il relativo metodo che verr\u00e0 chiamato, oppure una funzione anonima per gestire 'al volo' la richiesta.   ecco un esempio di richiesta GET  $router- get('/form', ['App\\Controllers\\FormController', 'form']);  ecco invece un esempio di richiesta POST  $router- post('/form', ['App\\Controllers\\FormController', 'save']);", 
+            "title": "Router"
+        }, 
+        {
+            "location": "/routing/#controller", 
+            "text": "Un controller \u00e8 una classe che permette attraverso di suoi metodi di gestire ed elaborare le richieste che arrivano dalle route definite nell'applicazione.  Ecco il codice di un semplice controller  ?php\nNamespace App\\Controllers;\n\nuse Nodopiano\\Corda\\Controller;\n\nclass FormController extends Controller\n{\n\n    public function form()\n    {\n      // do something here\n    }\n}  Tutto qui?   Si, un controller in Corda \u00e8 davvero molto semplice!", 
+            "title": "Controller"
+        }, 
+        {
+            "location": "/templates/", 
+            "text": "Templates e View\n\n\nCorda usa Twig, un sistema di template html per PHP. \nSi rimanda alla \ndocumentazione di Twig\n per i dettagli.\n\n\nCorda \u00e8 gi\u00e0 preimpostato con una master view (views/app.html) che pu\u00f2 essere modificata a seconda delle proprie esigenze. Al suo interno vengono inseriti gli altri template chiamati dalle view.\n\n\nView\n\n\nCome fare per rispondere con una view da un controller? \nCorda offre un comodo metodo globale view() che riceve due parametri:\n- il nome del file html \n- un array con le variabili da passare alla vista.\n\n\n  return view('index.html',array('message' =\n 'Hello!'));\n\n\n\n\nEcco fatto! sar\u00e0 costruita una view usando il template \nindex.html\n e passando la variabile \nmessage\n.\n\n\nResponse\n\n\nMa come fare quando quello che voglio ritornare non \u00e8 un vista ma un semplice json? \nCorda ha un'altro metodo globale, che si chiama, guardacaso, json().\n\n\nRiceve un array di variabili che andranno convertite e ritornate in formato json.\n\n\n  return json($this-\napi-\npages(61));", 
+            "title": "Templates"
+        }, 
+        {
+            "location": "/templates/#templates-e-view", 
+            "text": "Corda usa Twig, un sistema di template html per PHP. \nSi rimanda alla  documentazione di Twig  per i dettagli.  Corda \u00e8 gi\u00e0 preimpostato con una master view (views/app.html) che pu\u00f2 essere modificata a seconda delle proprie esigenze. Al suo interno vengono inseriti gli altri template chiamati dalle view.", 
+            "title": "Templates e View"
+        }, 
+        {
+            "location": "/templates/#view", 
+            "text": "Come fare per rispondere con una view da un controller? \nCorda offre un comodo metodo globale view() che riceve due parametri:\n- il nome del file html \n- un array con le variabili da passare alla vista.    return view('index.html',array('message' =  'Hello!'));  Ecco fatto! sar\u00e0 costruita una view usando il template  index.html  e passando la variabile  message .", 
+            "title": "View"
+        }, 
+        {
+            "location": "/templates/#response", 
+            "text": "Ma come fare quando quello che voglio ritornare non \u00e8 un vista ma un semplice json? \nCorda ha un'altro metodo globale, che si chiama, guardacaso, json().  Riceve un array di variabili che andranno convertite e ritornate in formato json.    return json($this- api- pages(61));", 
+            "title": "Response"
+        }, 
+        {
+            "location": "/utilities/", 
+            "text": "Utility\n\n\nQuante volte capita di fare e rifare sempre le stesse cose?\n\n\nA noi capita sempre di dover mandare una Mail da un form di contatto, iscrivere un utente ad una newsletter su mailchimp, salvare i dati del form in un semplice file CSV.\n\n\nCorda ha tre classi omonime che permettono con poco sforzo di eseguire queste operazioni.\n\n\nMail\n\n\nVuoi mandare una mail? \n\n\nMail::send($mail_to,$message);\n\n\n\n\necco fatto ;)\n\n\nNB: Ricorda di impostare l'indirizzo di invio nel file .env\n\n\nNewsletter\n\n\nNewsLetter::subscribe('LIST_ID_NUMBER',array('email' =\n $email_address));\n\n\n\n\nIl fornitore di newsletter di default \u00e8 Mailchimp.\n\n\nNB: ricorda di impostare il tuo MailChimp Api ID nel file .env \n\n\nCSV\n\n\nCsv::export(array($mail_to, $message,$other_field), $filename);\n\n\n\n\nil file sar\u00e0 salvato in app/storage/csv/", 
+            "title": "Utilities"
+        }, 
+        {
+            "location": "/utilities/#utility", 
+            "text": "Quante volte capita di fare e rifare sempre le stesse cose?  A noi capita sempre di dover mandare una Mail da un form di contatto, iscrivere un utente ad una newsletter su mailchimp, salvare i dati del form in un semplice file CSV.  Corda ha tre classi omonime che permettono con poco sforzo di eseguire queste operazioni.", 
+            "title": "Utility"
+        }, 
+        {
+            "location": "/utilities/#mail", 
+            "text": "Vuoi mandare una mail?   Mail::send($mail_to,$message);  ecco fatto ;)  NB: Ricorda di impostare l'indirizzo di invio nel file .env", 
+            "title": "Mail"
+        }, 
+        {
+            "location": "/utilities/#newsletter", 
+            "text": "NewsLetter::subscribe('LIST_ID_NUMBER',array('email' =  $email_address));  Il fornitore di newsletter di default \u00e8 Mailchimp.  NB: ricorda di impostare il tuo MailChimp Api ID nel file .env", 
+            "title": "Newsletter"
+        }, 
+        {
+            "location": "/utilities/#csv", 
+            "text": "Csv::export(array($mail_to, $message,$other_field), $filename);  il file sar\u00e0 salvato in app/storage/csv/", 
+            "title": "CSV"
+        }, 
+        {
+            "location": "/wp-api/", 
+            "text": "WordPress Api\n\n\nAPI\n\n\nCorda arriva equipaggiato con una funzione molto utile e particolare, un interfaccia semplice e intuitiva per le API di WordPress. \n\n\nI metodi disponibili sono  piuttosto eloquenti:\n\n\nPosts\n\n\npublic function posts($id)\n\n\n\n\nSe riceve un id risponde con il singolo post, altrimenti con tutti i post del sito.\n\n\nPages\n\n\npublic function pages($id)\n\n\n\n\nSe riceve un id risponde con la singola pagina, altrimenti con tutte le pagine del sito.\n\n\nUsare le API\n\n\nCome utilizzare le Api nel proprio controller:\n\n\n?php\n\nUse Nodopiano\\Corda\\WordPress;\n\nClass WordpressController extends Controller \n{\n  public function getWordpressApi()\n  {\n    return (new WordPress)-\nposts()-\nget();\n  }\n\n}\n\n\n\n\nRepository\n\n\nSe usiamo le API di WordPress in molti controller, pu\u00f2 essere noioso importare la libreria e creare un nuovo oggetto in ogni metodo. \n\n\nIn ogni controller che estende il controller default di Corda \u00e8 iniettato un repository (Nodopiano\\Corda\\Repositories\\ApiRepository) che permette di utilizzare le api di WordPress in modo pi\u00f9 semplice e veloce.\n\n\nLo stesso blocco di codice del paragrafo precendente diventa:\n\n\nClass WordPressController extends Controller\n{\n    public function getWordpressApi()\n    {\n        return $this-\napi-\nposts()-\nget();\n    }\n}\n\n\n\n\n\nIn \nconfig/api.php\n \u00e8 possibile specificare quale API utilizzare (non \u00e8 detto che si usi sempre wordpress) e l'endpoint per le chiamate REST.", 
+            "title": "Wp api"
+        }, 
+        {
+            "location": "/wp-api/#wordpress-api", 
+            "text": "", 
+            "title": "WordPress Api"
+        }, 
+        {
+            "location": "/wp-api/#api", 
+            "text": "Corda arriva equipaggiato con una funzione molto utile e particolare, un interfaccia semplice e intuitiva per le API di WordPress.   I metodi disponibili sono  piuttosto eloquenti:", 
+            "title": "API"
+        }, 
+        {
+            "location": "/wp-api/#posts", 
+            "text": "public function posts($id)  Se riceve un id risponde con il singolo post, altrimenti con tutti i post del sito.", 
+            "title": "Posts"
+        }, 
+        {
+            "location": "/wp-api/#pages", 
+            "text": "public function pages($id)  Se riceve un id risponde con la singola pagina, altrimenti con tutte le pagine del sito.", 
+            "title": "Pages"
+        }, 
+        {
+            "location": "/wp-api/#usare-le-api", 
+            "text": "Come utilizzare le Api nel proprio controller:  ?php\n\nUse Nodopiano\\Corda\\WordPress;\n\nClass WordpressController extends Controller \n{\n  public function getWordpressApi()\n  {\n    return (new WordPress)- posts()- get();\n  }\n\n}", 
+            "title": "Usare le API"
+        }, 
+        {
+            "location": "/wp-api/#repository", 
+            "text": "Se usiamo le API di WordPress in molti controller, pu\u00f2 essere noioso importare la libreria e creare un nuovo oggetto in ogni metodo.   In ogni controller che estende il controller default di Corda \u00e8 iniettato un repository (Nodopiano\\Corda\\Repositories\\ApiRepository) che permette di utilizzare le api di WordPress in modo pi\u00f9 semplice e veloce.  Lo stesso blocco di codice del paragrafo precendente diventa:  Class WordPressController extends Controller\n{\n    public function getWordpressApi()\n    {\n        return $this- api- posts()- get();\n    }\n}  In  config/api.php  \u00e8 possibile specificare quale API utilizzare (non \u00e8 detto che si usi sempre wordpress) e l'endpoint per le chiamate REST.", 
+            "title": "Repository"
+        }
+    ]
+}
