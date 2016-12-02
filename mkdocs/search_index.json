@@ -102,7 +102,7 @@
         }, 
         {
             "location": "/utilities/", 
-            "text": "Utility\n\n\nQuante volte capita di fare e rifare sempre le stesse cose?\n\n\nA noi capita sempre di dover mandare una Mail da un form di contatto, iscrivere un utente ad una newsletter su mailchimp, salvare i dati del form in un semplice file CSV.\n\n\nCorda ha tre classi omonime che permettono con poco sforzo di eseguire queste operazioni.\n\n\nMail\n\n\nVuoi mandare una mail? \n\n\nMail::send($mail_to,$message);\n\n\n\n\necco fatto ;)\n\n\nNB: Ricorda di impostare l'indirizzo di invio nel file .env\n\n\nNewsletter\n\n\nNewsLetter::subscribe('LIST_ID_NUMBER',array('email' =\n $email_address));\n\n\n\n\nIl fornitore di newsletter di default \u00e8 Mailchimp.\n\n\nNB: ricorda di impostare il tuo MailChimp Api ID nel file .env \n\n\nCSV\n\n\nCsv::export(array($mail_to, $message,$other_field), $filename);\n\n\n\n\nil file sar\u00e0 salvato in app/storage/csv/", 
+            "text": "Utility\n\n\nQuante volte capita di fare e rifare sempre le stesse cose?\n\n\nA noi capita sempre di dover mandare una Mail da un form di contatto, iscrivere un utente ad una newsletter su mailchimp, salvare i dati del form in un semplice file CSV.\n\n\nCorda ha tre classi omonime che permettono con poco sforzo di eseguire queste operazioni.\n\n\nMail\n\n\nVuoi mandare una mail? \n\n\nMail::send($mail_to,$subject,$message);\n\n\n\n\necco fatto ;)\n\n\nNB: Ricorda di impostare l'indirizzo di invio nel file .env\n\n\nNewsletter\n\n\nNewsLetter::subscribe('LIST_ID_NUMBER',array('email' =\n $email_address));\n\n\n\n\nIl fornitore di newsletter di default \u00e8 Mailchimp.\n\n\nNB: ricorda di impostare il tuo MailChimp Api ID nel file .env \n\n\nCSV\n\n\nCsv::export(array($mail_to, $message,$other_field), $filename);\n\n\n\n\nil file sar\u00e0 salvato in app/storage/csv/", 
             "title": "Utilities"
         }, 
         {
@@ -112,7 +112,7 @@
         }, 
         {
             "location": "/utilities/#mail", 
-            "text": "Vuoi mandare una mail?   Mail::send($mail_to,$message);  ecco fatto ;)  NB: Ricorda di impostare l'indirizzo di invio nel file .env", 
+            "text": "Vuoi mandare una mail?   Mail::send($mail_to,$subject,$message);  ecco fatto ;)  NB: Ricorda di impostare l'indirizzo di invio nel file .env", 
             "title": "Mail"
         }, 
         {
