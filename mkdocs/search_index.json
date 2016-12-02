@@ -47,7 +47,7 @@
         }, 
         {
             "location": "/deploy/", 
-            "text": "Deploy\n\n\nSviluppare velocemente un'applicazione avrebbe poco senso se poi si perdono giornate intere per il deploy, giusto?\n\n\nCorda usa \nLaravel Envoy\n per automatizzare le operazioni pi\u00f9 comuni, come il deploy.\n\n\nPer installare Laravel Envoy\n\n\ncomposer global require \nlaravel/envoy=~1.0\n\n\n\n\n\nNel file Envoy.blade.php baster\u00e0 inserire le variabili del progetto (nome utente sul server, dominio, repository git) e Envoy si occuper\u00e0 del resto!", 
+            "text": "Deploy\n\n\nSviluppare velocemente un'applicazione avrebbe poco senso se poi si perdono giornate intere per il deploy, giusto?\n\n\nCorda usa \nLaravel Envoy\n per automatizzare le operazioni pi\u00f9 comuni, come il deploy.\n\n\nPer installare Laravel Envoy\n\n\ncomposer global require \nlaravel/envoy=~1.0\n\n\n\n\n\nNel file Envoy.blade.php baster\u00e0 inserire le variabili del progetto (nome utente sul server, dominio, repository git) e Envoy si occuper\u00e0 del resto!\n\n\nLa prima installazione sul server si pu\u00f2 effettuare con \n\n\nenvoy run clone\n\n\n\n\ni deploy invece vanno eseguiti con \n\n\nenvoy run deploy", 
             "title": "Deploy"
         }, 
         {
@@ -57,7 +57,7 @@
         }, 
         {
             "location": "/deploy/#per-installare-laravel-envoy", 
-            "text": "composer global require  laravel/envoy=~1.0   Nel file Envoy.blade.php baster\u00e0 inserire le variabili del progetto (nome utente sul server, dominio, repository git) e Envoy si occuper\u00e0 del resto!", 
+            "text": "composer global require  laravel/envoy=~1.0   Nel file Envoy.blade.php baster\u00e0 inserire le variabili del progetto (nome utente sul server, dominio, repository git) e Envoy si occuper\u00e0 del resto!  La prima installazione sul server si pu\u00f2 effettuare con   envoy run clone  i deploy invece vanno eseguiti con   envoy run deploy", 
             "title": "Per installare Laravel Envoy"
         }, 
         {
