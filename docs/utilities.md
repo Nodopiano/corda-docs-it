@@ -13,7 +13,7 @@ Corda ha tre classi omonime che permettono con poco sforzo di eseguire queste op
 Vuoi mandare una mail? 
 
 ```php
-Mail::send($mail_to,$message);
+Mail::send($mail_to,$subject,$message);
 ```
 
 ecco fatto ;)
